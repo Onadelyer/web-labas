@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+    
+        form {
+            width: 60%;
+            margin: 0 auto;
+        }
+    
+        fieldset {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+
+            display:flex;
+            flex-direction: column;
+        }
+    
+        legend {
+            font-weight: bold;
+        }
+    
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+    
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="tel"],
+        textarea,
+        select {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+    
+        input[type="submit"],
+        input[type="reset"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    
+        input[type="file"] {
+            margin-top: 10px;
+        }
+    
+        select[multiple] {
+            height: auto;
+        }
+    
+        /* Додаткові стилі для вигляду форми можна додавати тут */
+    
+    </style>
+    
+    <title>Анкета</title>
+</head>
+<body>
+    <form action="#" method="post" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Основна інформація</legend>
+            <label for="name">Ім'я:</label>
+            <input type="text" id="name" name="name" required placeholder="Введіть ім'я">
+
+            <label for="address">Адреса:</label>
+            <textarea id="address" name="address" rows="4" placeholder="Введіть адресу"></textarea>
+
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$" placeholder="Введіть пароль">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required autocomplete="off" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" placeholder="Введіть email">
+
+            <label for="phone">Мобільний номер:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="Введіть мобільний номер">
+
+            <label for="birthDate">Дата народження:</label>
+            <input type="date" id="birthDate" name="birthDate">
+        </fieldset>
+
+        <fieldset>
+            <legend>Ваші вподобання</legend>
+            <label>Оберіть стать:</label>
+            <div>
+                <input type="radio" id="male" name="gender" value="male" checked>
+                <label for="male">Чоловік</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Жінка</label>
+                <input type="radio" id="other" name="gender" value="other">
+                <label for="other">Інше</label>
+            </div>
+
+            <label>Оберіть ваші інтереси:</label>
+            <div>
+                <input type="checkbox" id="sports" name="interests" value="sports">
+                <label for="sports">Спорт</label>
+                <input type="checkbox" id="music" name="interests" value="music">
+                <label for="music">Музика</label>
+                <input type="checkbox" id="books" name="interests" value="books">
+                <label for="books">Книги</label>
+                <input type="checkbox" id="movies" name="interests" value="movies">
+                <label for="movies">Фільми</label>
+            </div>
+
+            <label for="country">Країна проживання:</label>
+            <select id="country" name="country">
+                <option value="ukraine">Україна</option>
+                <option value="russia">Росія</option>
+                <option value="usa" selected>США</option>
+                <option value="germany">Німеччина</option>
+                <option value="france">Франція</option>
+            </select>
+
+            <label for="languages">Оберіть мови:</label>
+            <select id="languages" name="languages" multiple>
+                <optgroup label="Європейські">
+                    <option value="english">Англійська</option>
+                    <option value="german">Німецька</option>
+                    <option value="french">Французька</option>
+                </optgroup>
+                <optgroup label="Азіатські">
+                    <option value="chinese">Китайська</option>
+                    <option value="japanese">Японська</option>
+                    <option value="korean">Корейська</option>
+                </optgroup>
+                <optgroup label="Африканські">
+                    <option value="swahili">Суахілі</option>
+                    <option value="arabic">Арабська</option>
+                    <option value="hausa">Хауса</option>
+                </optgroup>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Додаткова інформація</legend>
+            <label for="comments">Коментарі:</label>
+            <textarea id="comments" name="comments" rows="4" placeholder="Додаткові коментарі"></textarea>
+
+            <label for="profilePic">Завантажити фото:</label>
+            <input type="file" id="profilePic" name="profilePic" accept="image/*" multiple>
+        </fieldset>
+
+        <input type="submit" value="Відправити">
+        <input type="reset" value="Очистити">
+    </form>
+</body>
+</html>
