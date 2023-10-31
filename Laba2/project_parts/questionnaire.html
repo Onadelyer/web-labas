@@ -68,14 +68,12 @@
             height: auto;
         }
     
-        /* Додаткові стилі для вигляду форми можна додавати тут */
-    
     </style>
     
     <title>Анкета</title>
 </head>
 <body>
-    <form action="#" method="post" enctype="multipart/form-data">
+    <form action="#" method="post" enctype="multipart/form-data" autocomplete="on">
         <fieldset>
             <legend>Основна інформація</legend>
             <label for="name">Ім'я:</label>
@@ -88,7 +86,18 @@
             <input type="password" id="password" name="password" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$" placeholder="Введіть пароль">
 
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required autocomplete="off" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" placeholder="Введіть email">
+            <input autocomplete="off" type="email" id="email" name="email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" placeholder="Введіть email" data>
+
+            
+            <input type="text" id="names" name="name" required placeholder="Введіть ім'я"  list="emails">
+            <datalist id="emails">
+                <option value="tokarmacs63@gmail.com">
+                <option value="tokarmacs73@gmail.com">
+                <option value="tokarmacs83@gmail.com">
+                <option value="tokarmacs93@gmail.com">
+                <option value="tokarmacs1012313@gmail.com">
+                <option value="askdfsadfff63@gmail.com">
+            </datalist>
 
             <label for="phone">Мобільний номер:</label>
             <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="Введіть мобільний номер">
@@ -122,7 +131,7 @@
             </div>
 
             <label for="country">Країна проживання:</label>
-            <select id="country" name="country">
+            <select id="country" name="country" multiple>
                 <option value="ukraine">Україна</option>
                 <option value="russia">Росія</option>
                 <option value="usa" selected>США</option>
