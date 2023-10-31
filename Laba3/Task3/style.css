@@ -1,0 +1,35 @@
+/* 3.1 */
+a {
+    color: purple;
+}
+
+/* 3.2 */
+.main-menu a {
+    color: green;
+}
+
+/* 3.3 */
+ul li ul li {
+    list-style-type: square;
+}
+
+/* 3.4 */
+ul li ul li ul li {
+    list-style-type: none;
+    list-style-image: url('path/to/icon.png'); /* Replace with your own icon path */
+}
+
+/* 3.5 */
+ul ul li {
+    list-style-type: none;
+}
+
+/* 3.6 */
+ul ul li a {
+    text-decoration: none;
+}
+
+/* 3.7 */
+.misc ol li {
+    list-style-position: inside;
+}
