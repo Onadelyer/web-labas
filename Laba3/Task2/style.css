@@ -1,0 +1,34 @@
+.title {
+    color: red;
+    text-align: center;
+}
+
+.subtitle {
+    font-style: italic;
+    text-align: center;
+}
+
+p {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+u {
+    color: blue;
+}
+
+s {
+    color: gray;
+}
+
+mark {
+    background-color: yellow;
+}
+
+.separator {
+    border-color: green;
+}
+
+.description {
+    text-align: center;
+}
