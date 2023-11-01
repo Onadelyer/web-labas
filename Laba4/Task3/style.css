@@ -1,0 +1,61 @@
+/* Додаткові CSS-стилі */
+body {
+    background-color: #f3f3f3; /* Змініть колір фону за потреби */
+}
+
+fieldset {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fff; /* Змініть колір фону за потреби */
+}
+
+legend {
+    font-weight: bold;
+    color: #333; /* Змініть колір тексту за потреби */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555; /* Змініть колір тексту міток за потреби */
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%; /* Змініть ширину вводу за потреби */
+}
+
+input[type="submit"],
+input[type="reset"] {
+    background-color: #4CAF50; /* Змініть колір фону кнопок за потреби */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: #45a049; /* Змініть колір фону кнопок при наведенні курсору за потреби */
+}
+
+input[type="file"] {
+    margin-top: 10px;
+}
+
+select[multiple] {
+    height: auto;
+}
+
+/* Додаткові CSS-стилі за потреби */

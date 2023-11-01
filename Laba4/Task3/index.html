@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> <!-- Підключення файлу style.css -->
+
+    <title>Анкета</title>
+</head>
+<body>
+    <form action="#" method="post" enctype="multipart/form-data" autocomplete="on">
+        <fieldset>
+            <legend>Основна інформація</legend>
+            <label for="name">Ім'я:</label>
+            <input type="text" id="name" name="name" required placeholder="Введіть ім'я">
+
+            <label for="address">Адреса:</label>
+            <textarea id="address" name="address" rows="4" placeholder="Введіть адресу"></textarea>
+
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$" placeholder="Введіть пароль">
+
+            <label for="email">Email:</label>
+            <input autocomplete="off" type="email" id="email" name="email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" placeholder="Введіть email" data>
+
+            
+            <input type="text" id="names" name="name" required placeholder="Введіть ім'я"  list="emails">
+            <datalist id="emails">
+                <option value="tokarmacs63@gmail.com">
+                <option value="tokarmacs73@gmail.com">
+                <option value="tokarmacs83@gmail.com">
+                <option value="tokarmacs93@gmail.com">
+                <option value="tokarmacs1012313@gmail.com">
+                <option value="askdfsadfff63@gmail.com">
+            </datalist>
+
+            <label for="phone">Мобільний номер:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="Введіть мобільний номер">
+
+            <label for="birthDate">Дата народження:</label>
+            <input type="date" id="birthDate" name="birthDate">
+        </fieldset>
+
+        <fieldset>
+            <legend>Ваші вподобання</legend>
+            <label>Оберіть стать:</label>
+            <div>
+                <input type="radio" id="male" name="gender" value="male" checked>
+                <label for="male">Чоловік</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Жінка</label>
+                <input type="radio" id="other" name="gender" value="other">
+                <label for="other">Інше</label>
+            </div>
+
+            <label>Оберіть ваші інтереси:</label>
+            <div>
+                <input type="checkbox" id="sports" name="interests" value="sports">
+                <label for="sports">Спорт</label>
+                <input type="checkbox" id="music" name="interests" value="music">
+                <label for="music">Музика</label>
+                <input type="checkbox" id="books" name="interests" value="books">
+                <label for="books">Книги</label>
+                <input type="checkbox" id="movies" name="interests" value="movies">
+                <label for="movies">Фільми</label>
+            </div>
+
+            <label for="country">Країна проживання:</label>
+            <select id="country" name="country" multiple>
+                <option value="ukraine">Україна</option>
+                <option value="russia">Росія</option>
+                <option value="usa" selected>США</option>
+                <option value="germany">Німеччина</option>
+                <option value="france">Франція</option>
+            </select>
+
+            <label for="languages">Оберіть мови:</label>
+            <select id="languages" name="languages" multiple>
+                <optgroup label="Європейські">
+                    <option value="english">Англійська</option>
+                    <option value="german">Німецька</option>
+                    <option value="french">Французька</option>
+                </optgroup>
+                <optgroup label="Азіатські">
+                    <option value="chinese">Китайська</option>
+                    <option value="japanese">Японська</option>
+                    <option value="korean">Корейська</option>
+                </optgroup>
+                <optgroup label="Африканські">
+                    <option value="swahili">Суахілі</option>
+                    <option value="arabic">Арабська</option>
+                    <option value="hausa">Хауса</option>
+                </optgroup>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Додаткова інформація</legend>
+            <label for="comments">Коментарі:</label>
+            <textarea id="comments" name="comments" rows="4" placeholder="Додаткові коментарі"></textarea>
+
+            <label for="profilePic">Завантажити фото:</label>
+            <input type="file" id="profilePic" name="profilePic" accept="image/*" multiple>
+        </fieldset>
+
+        <input type="submit" value="Відправити">
+        <input type="reset" value="Очистити">
+    </form>
+</body>
+</html>
