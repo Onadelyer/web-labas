@@ -1,0 +1,27 @@
+a{
+    color: purple;
+}
+
+.main-menu-titles{
+    color: green;
+}
+
+/* 3.3 */
+ul:nth-child(1) li ul li {
+    list-style-type: square;
+}
+
+/* 3.4 */
+ul:nth-child(2) li ul li {
+    list-style-image: url('path_to_your_icon.png');
+}
+
+/* 3.5 */
+ul:nth-child(3) li ul li {
+    list-style-type: none;
+}
+
+/* 3.6 */
+ul li ul li a {
+    text-decoration: none;
+}
