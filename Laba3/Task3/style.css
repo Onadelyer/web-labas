@@ -11,7 +11,7 @@ ul li:nth-child(1) ul li {
 }
 
 ul li:nth-child(2) ul li {
-    list-style-image: url('path_to_your_icon.png');
+    list-style-image: url('icon.jpg');
 }
 
 ul li:nth-child(3) ul li {
