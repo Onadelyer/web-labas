@@ -1,0 +1,456 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+
+
+header {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+footer {
+    background-color: rgb(37, 34, 41);
+    padding: 50px;
+    text-align: center;
+}
+
+footer p {
+    color: rgb(235, 235, 235);
+    font-size: 18px;
+}
+
+.icon img {
+    width: 30px;
+    height: auto;
+}
+
+.rab {
+    max-width: 1170px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+
+ul {
+    text-align: right;
+    
+}
+
+img {
+    margin: 0;
+}
+
+h1,h2,h3 {
+    text-transform: uppercase;
+}
+
+p {
+    color: rgb(96, 96, 96);
+}
+
+.silver p {
+    color: rgb(146, 146, 146);
+    text-transform: uppercase;
+}
+
+
+
+.hear {
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+    background-color: rgb(235, 102, 102)
+    
+}
+
+.logo img {
+    width: 100px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.menu ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.menu ul li:last-child {
+    margin: 0;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+/* ENTRYYY */
+.entry {
+    width: 100%;
+    padding: 30px 0 30px 0;
+    background-color: rgba(166, 166, 166, 0.408);
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+
+
+/* OUR AWESOME WORKS - BUTTON */
+.works {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    margin-top: 60px;
+}
+
+.work {
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.work p::after {
+    content: '--';
+    color: red; 
+  }
+
+.button {
+    color: white;
+    font-size: 16px;
+    background-color: rgb(235, 102, 102);
+    padding: 0 20px 0 20px;
+}
+
+.button p {
+    color: white;
+}
+
+
+
+/* IMAGEEE */
+.image {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.image img {
+    width: 370px;
+    height: 290px;
+    margin: 10px;
+}
+
+
+/* BOTTNOM IMAGE */
+.goodwork {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.work2 {
+    font-size: 15px;
+}
+
+.button {
+    width: 15%;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+
+/* WHAT WE DOOO */
+.glo {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0;
+}
+
+.block {
+    width: 200px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 10px;
+}
+
+.block img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+
+
+
+
+/* JOURNALLLL */
+.journal {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.journal2 {
+    display: flex;
+    width: 585px;
+}
+
+.journal3 img {
+    margin: 20px 20px 20px 0;
+}
+
+.moreinfo {
+    padding-right: 10px;
+}
+
+
+
+
+/* burger*/
+.burger-menu {
+    display: none;
+}
+
+.burger {
+    width: 30px;
+    height: 20px;
+    display: block;
+    cursor: pointer;
+    position: fixed;
+    top: 30px;
+    right: 20px;
+    z-index: 9999;
+}
+
+.burger1 {
+    width: 30px;
+    height: 30px;
+    display: block;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+.burger::before, .burger::after, .burger1::before {
+    content: "";
+    width: 30px;
+    height: 4px;
+    background-color: #000;
+    margin: 6px 0;
+    transition: 0.4s;
+    display: block;
+}
+
+.burger::before {
+    top: 0;
+}
+
+.burger::after {
+    bottom: 0;
+}
+
+.burger1::before {
+    top: 10px;
+}
+
+@media (max-width: 1205px) {
+    .menu ul {
+        
+        flex-wrap: wrap;
+    }
+
+    .image {
+        justify-content: space-between;
+        
+    }
+    .image img { 
+        width: 300px;
+        height: 240px;
+    }
+    
+    .journal {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 980px) {
+    .image {
+        justify-content: space-between;
+        
+    }
+    .image img {        
+        width: 340px;
+        height: 300px;
+    }
+    .journal {
+        justify-content: center;
+    }
+
+    .journal2 {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .container {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .image {
+        justify-content: space-between;
+        
+    }
+    .image img {  
+        width: 300px;
+        height: 240px;
+    }
+
+    .block {
+        padding: 20px;
+    }
+      
+    .journal {
+        justify-content: center;
+    }
+     
+    .journal2 {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .container {
+        padding: 10px;
+    }
+
+    .burger-menu {
+        float: right;
+        display: block; 
+        
+    }
+
+    header {
+        width: 100%;
+        display: flex;
+        position: fixed;
+        background-color: rgb(255, 255, 255);
+    }
+
+    .menu ul {
+        display: none; 
+        flex-direction: column; 
+        position: absolute;
+        background-color: #fff;
+        width: 50%;
+        top: 10px;
+        left: 200px;
+       
+    }
+    .menu ul li {
+        padding: 10px;
+        margin-right: 0;
+    }
+
+    .menu ul.show {
+        display: flex;
+        position: fixed; 
+        top: 30px;
+        right: 15px; 
+        z-index: 9999; 
+    }
+}
+
+@media (max-width: 673px) {
+    .image {
+        justify-content: center; 
+        
+    }
+    .image img {
+        width: 550px;
+        height: 460px;
+    }
+    .journal2 {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 576px) {
+    .image {
+        justify-content: center; 
+    }
+    .image img {
+        width: 530px;
+        height: 460px;
+    }
+
+    .block {
+        margin: 40px;
+    }
+    .block img {
+        width: 180px;
+        height: 180px;
+        
+    }
+
+    .journal3 img {
+        width: 380px;
+        height: 380px;
+    }
+
+    .journal2 {
+        flex-direction: column;
+    }
+    .journal {
+        justify-content: center;
+    }
+
+    .container {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 430px) {
+    .image {
+        justify-content: center; 
+    }
+    .image img {
+        width: auto;
+        height: auto;
+    }
+
+    .journal3 img {
+        width: auto;
+        height: auto;
+    }
+
+}
+  

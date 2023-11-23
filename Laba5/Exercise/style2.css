@@ -1,0 +1,70 @@
+main div{
+    float: left;
+    width: 300px;
+    margin: 10px;
+    border:  solid green;
+    padding: 15px;
+    border-width: 5px;
+}
+
+main div:first-child{
+    border-radius: 50px;
+}
+
+main div:nth-child(2){
+    border-radius: 110px 0;
+}
+
+main div:nth-child(3){
+    border-radius: 50px 150px;
+}
+
+main div:nth-child(4){
+    border-radius: 150px / 50px;
+    border-color: green lightgreen;
+    border-width: 15px;
+}
+
+main div:nth-child(5){
+    border-color: #39cb14 #186106 #39cb14 #186106;
+    border-radius: 80px 20px;
+    border-width: 15px;
+}
+
+main div:nth-child(6){
+    border-bottom-right-radius: 100%;
+    border-color:  lightgreen  lightgreen lightgreen green;
+    border-width: 15px;
+}
+
+main div:nth-child(7){
+    border: double orange 10px;
+
+    border-image: url("https://www.w3schools.com/cssref/border.png") 20;
+}
+
+main div:nth-child(8){
+    border: double orange 10px;
+    border-image: url("https://www.w3schools.com/cssref/border.png") 30/19px round;
+}
+
+main div:nth-child(9){
+    border: double orange 10px;
+    border-image: url("https://www.w3schools.com/cssref/border.png") 20% round;
+}
+
+main div:nth-child(10){
+    border: double red 10px;
+    border-image: url(../img/border.png) 350 stretch;
+}
+
+main div:nth-child(11){
+    border: double orange 10px;
+    border-image: url(../img/border.png) 180 round;
+}
+
+main div:last-child{
+    
+    border: double orange 10px;
+    border-image: url(../img/border.png) 190 stretch;
+}

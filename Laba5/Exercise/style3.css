@@ -1,0 +1,22 @@
+main > div{
+    background-color: brown;
+    margin: 20px;
+    padding: 15px;
+    color: white;
+    border-radius: 50px;
+}
+
+main > div:last-child{
+    background-color: rgba(164, 41, 41, 0.822);
+} 
+
+
+div.block{
+    display: inline-block;
+    margin: 20px;
+    display: inline block;
+    padding: 15px;
+    width: 450px;
+    background-color: rgba(255, 0, 0, 0.538);
+    border-radius: 50px;
+}

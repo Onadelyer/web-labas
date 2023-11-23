@@ -1,0 +1,35 @@
+div.wrapper{
+    width: 1140px;
+    padding: 20px;
+    justify-content: center;
+}
+
+header{
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+
+a > img{
+    width: 80px;
+    height: 80px;
+    padding-right: 400px;
+}
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 15px;
+}
+
+li {
+    margin: 10px;
+    float: left;
+}
+
+li a{
+    display: inline-block;
+    padding: 10px;
+    background-color: rgb(220, 95, 64);
+    text-decoration: none;
+}

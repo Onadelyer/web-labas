@@ -1,0 +1,91 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    width: 800px;
+    border: silver 1px solid;
+    box-shadow: 10px 5px 5px silver;
+}
+
+img{
+    width: 100px;
+    height: 100px;
+}
+
+h1 {
+    font-size: 50px;
+    margin: 0;
+    padding: 8px;
+    float: left;
+}
+
+h2 {
+    width: 150px;
+}
+
+h5 {
+    margin: 8px 0 8px 0;
+}
+
+p {
+    margin: 8px 0 8px 0;
+    padding-left: 10px;
+}
+
+.week{
+    display: flex;
+    flex-direction: column;
+}
+
+.head {
+    display: flex;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.over {
+    margin: 20px 0 0 20px;
+    text-align: left;
+}
+
+.wethear {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+}
+.wethear p {
+    font-size: 40px;
+}
+
+.info {
+    margin: 0 0 10px 80px;
+    text-align: left;
+}
+
+.today {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;    
+    border-top: 1px solid silver;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+.town {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.silver {
+    color: rgb(136, 135, 135);
+}

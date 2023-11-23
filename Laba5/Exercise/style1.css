@@ -1,0 +1,21 @@
+main p{
+    padding: 10px;
+    margin-top: 20px;
+    column-count: 3;
+    column-rule: 5px solid red;
+    column-rule-style: dotted;
+    column-width: 200px;
+    column-gap: 35px;
+}
+
+p > img{
+    width: 200px;
+    margin: 20px;
+    float: right;
+}
+
+span > img{
+    width: 200px;
+    margin: 20px;
+    float: left;
+}

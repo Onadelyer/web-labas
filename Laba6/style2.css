@@ -1,0 +1,43 @@
+.block {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 200px;
+    margin-top: 50px;
+}
+
+.blocks1,
+.blocks2,
+.blocks3 {
+    height: 120px;
+    width: 90px;
+    background-color: rgb(50, 50, 142);
+    padding: 20px;
+    margin: 5px;
+    border: 1px black solid;
+    cursor: pointer;
+    transition-duration: 1s;
+}
+
+.blocks1 {
+    height: 15px;
+    background-color: green;
+}
+
+.blocks3 {
+    background-color: rgb(163, 28, 163);
+}
+
+.blocks2,
+.blocks3 {
+    color: white;
+    opacity: 0;
+}
+
+.blocks1:hover + .blocks2 {
+    opacity: 1;
+}
+  
+.blocks2:hover + .blocks3{
+    opacity: 1;
+}
