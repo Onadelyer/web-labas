@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traffic Light Simulation</title>
+  <style>
+    #traffic-light {
+      width: 100px;
+      height: 300px;
+      background-color: black;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+    }
+    .light {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: gray;
+    }
+    #state {
+      margin-top: 20px;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Traffic Light Simulation</h1>
+  <div id="traffic-light">
+    <div id="red" class="light"></div>
+    <div id="yellow" class="light"></div>
+    <div id="green" class="light"></div>
+  </div>
+  <div id="state"></div>
+  <label for="red-duration">Red Duration (s):</label>
+  <input type="number" id="red-duration" value="5">
+  <label for="yellow-duration">Yellow Duration (s):</label>
+  <input type="number" id="yellow-duration" value="3">
+  <label for="green-duration">Green Duration (s):</label>
+  <input type="number" id="green-duration" value="7">
+  <button id="update-durations">Update Durations</button>
+  <button id="manual-switch">Switch to Next State</button>
+  <script>
+    let redDurationInput = document.getElementById('red-duration');
+    let yellowDurationInput = document.getElementById('yellow-duration');
+    let greenDurationInput = document.getElementById('green-duration');
+
+    // Function to display current state
+    function displayState(state) {
+      document.getElementById('state').innerText = state;
+    }
+
+    function trafficLight() {
+      let currentState = 'green';
+      let intervalId;
+
+      function switchState() {
+        clearInterval(intervalId); // Clear any existing interval before starting a new one
+        switch (currentState) {
+          case 'green':
+            displayState('Green');
+            document.getElementById('red').style.backgroundColor = 'gray';
+            document.getElementById('yellow').style.backgroundColor = 'gray';
+            document.getElementById('green').style.backgroundColor = 'green';
+            intervalId = setInterval(() => {
+              currentState = 'yellow';
+              switchState();
+            }, greenDurationInput.value * 1000);
+            break;
+          case 'yellow':
+            displayState('Yellow');
+            document.getElementById('red').style.backgroundColor = 'gray';
+            document.getElementById('yellow').style.backgroundColor = 'yellow';
+            document.getElementById('green').style.backgroundColor = 'gray';
+            intervalId = setInterval(() => {
+              currentState = 'flashing yellow';
+              switchState();
+            }, yellowDurationInput.value * 1000);
+            break;
+          case 'flashing yellow':
+            displayState('Flashing Yellow');
+            let flashes = 0;
+            intervalId = setInterval(() => {
+              document.getElementById('red').style.backgroundColor = 'gray';
+              document.getElementById('green').style.backgroundColor = 'gray';
+              document.getElementById('yellow').style.backgroundColor = flashes % 2 === 0 ? 'yellow' : 'gray';
+              flashes++;
+              if (flashes === 6) {
+                clearInterval(intervalId);
+                currentState = 'red';
+                switchState();
+              }
+            }, 500);
+            break;
+          case 'red':
+            displayState('Red');
+            document.getElementById('red').style.backgroundColor = 'red';
+            document.getElementById('yellow').style.backgroundColor = 'gray';
+            document.getElementById('green').style.backgroundColor = 'gray';
+            intervalId = setInterval(() => {
+              currentState = 'green';
+              switchState();
+            }, redDurationInput.value * 1000);
+            break;
+        }
+      }
+
+      switchState();
+
+      // Function to manually switch to the next state
+      function manualSwitch() {
+        switch (currentState) {
+          case 'green':
+            currentState = 'yellow';
+            break;
+          case 'yellow':
+            currentState = 'flashing yellow';
+            break;
+          case 'flashing yellow':
+            currentState = 'red';
+            break;
+          case 'red':
+            currentState = 'green';
+            break;
+        }
+        switchState();
+      }
+
+      // Update durations event listener
+      document.getElementById('update-durations').addEventListener('click', () => {
+        clearInterval(intervalId);
+        switchState();
+      });
+
+      // Manual switch event listener
+      document.getElementById('manual-switch').addEventListener('click', manualSwitch);
+    }
+
+    trafficLight();
+  </script>
+</body>
+</html>

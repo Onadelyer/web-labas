@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Date and Time</title>
+  <style>
+    #clock {
+      font-size: 32px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    #countdown {
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    #calendar {
+      font-size: 16px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="clock"></div>
+  <div id="countdown"></div>
+  <label for="calendar-input">Select a month and year:</label>
+  <input type="month" id="calendar-input">
+  <div id="calendar"></div>
+
+  <script>
+    // Digital Clock with Animation
+    function digitalClock() {
+      function updateTime() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        const clock = `${hours}:${minutes}:${seconds}`;
+        document.getElementById('clock').innerText = clock;
+      }
+
+      updateTime();
+      setInterval(updateTime, 1000);
+
+      // Flashing Seconds Indicator
+      setInterval(() => {
+        const secondsIndicator = document.getElementById('clock');
+        secondsIndicator.style.color = secondsIndicator.style.color === 'red' ? 'black' : 'red';
+      }, 500);
+    }
+
+    // Countdown Timer
+    function countdownTimer(endDate) {
+      function updateCountdown() {
+        const now = new Date();
+        const timeDifference = endDate.getTime() - now.getTime();
+        if (timeDifference <= 0) {
+          document.getElementById('countdown').innerText = 'Countdown ended!';
+          clearInterval(intervalId);
+          return;
+        }
+        const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+        document.getElementById('countdown').innerText = `Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+      }
+
+      updateCountdown();
+      const intervalId = setInterval(updateCountdown, 1000);
+    }
+
+    // Calendar
+    function displayCalendar() {
+      function updateCalendar(month, year) {
+        const calendar = document.getElementById('calendar');
+        const options = { month: 'long', year: 'numeric' };
+        calendar.innerHTML = new Date(year, month).toLocaleDateString('en-US', options);
+      }
+
+      const currentDate = new Date();
+      let currentMonth = currentDate.getMonth();
+      let currentYear = currentDate.getFullYear();
+      updateCalendar(currentMonth, currentYear);
+
+      document.getElementById('calendar-input').addEventListener('input', (event) => {
+        const [year, month] = event.target.value.split('-');
+        updateCalendar(month - 1, year);
+      });
+    }
+
+    digitalClock();
+    const countdownEndDate = new Date('2024-12-31T23:59:59');
+    countdownTimer(countdownEndDate);
+    displayCalendar();
+  </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lamp Control</title>
+<style>
+    .lamp {
+        width: 100px;
+        height: 100px;
+        background: gray;
+        border-radius: 50%;
+        margin: 20px;
+    }
+
+    .on {
+        background: yellow;
+    }
+</style>
+</head>
+<body>
+<div class="lamp"></div>
+<button id="toggleButton">Включити</button>
+<select id="lampType">
+    <option value="regular">Звичайна лампочка</option>
+    <option value="energySaving">Енергозберігаюча лампочка</option>
+    <option value="LED">Світлодіодна лампочка</option>
+</select>
+<label for="brightnessInput">Яскравість (1-100): </label>
+<input type="number" id="brightnessInput" min="1" max="100">
+<button id="brightnessButton">Змінити яскравість</button>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const lamp = document.querySelector('.lamp');
+    const toggleButton = document.getElementById('toggleButton');
+    const lampTypeSelect = document.getElementById('lampType');
+    const brightnessInput = document.getElementById('brightnessInput');
+    const brightnessButton = document.getElementById('brightnessButton');
+    let timeoutId;
+
+    toggleButton.addEventListener('click', function() {
+        lamp.classList.toggle('on');
+        resetAutoOff();
+    });
+
+    brightnessButton.addEventListener('click', function() {
+        const brightness = parseInt(brightnessInput.value);
+        if (brightness >= 1 && brightness <= 100) {
+            lamp.style.opacity = brightness / 100;
+        } else {
+            alert('Будь ласка, введіть значення яскравості від 1 до 100.');
+        }
+    });
+
+    function resetAutoOff() {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(function() {
+            lamp.classList.remove('on');
+        }, 5000);
+    }
+});
+</script>
+</body>
+</html>
