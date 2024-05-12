@@ -24,9 +24,11 @@
 </head>
 <body>
   <div id="clock"></div>
+  <label for="countdown-input">Set the end date and time for countdown:</label>
+  <input type="datetime-local" id="countdown-input">
   <div id="countdown"></div>
   <label for="calendar-input">Select a month and year:</label>
-  <input type="month" id="calendar-input">
+  <input type="datetime-local" id="calendar-input">
   <div id="calendar"></div>
 
   <script>
@@ -44,15 +46,17 @@
       updateTime();
       setInterval(updateTime, 1000);
 
-      // Flashing Seconds Indicator
       setInterval(() => {
         const secondsIndicator = document.getElementById('clock');
         secondsIndicator.style.color = secondsIndicator.style.color === 'red' ? 'black' : 'red';
       }, 500);
     }
 
-    // Countdown Timer
+    let intervalId = null;
+
     function countdownTimer(endDate) {
+      clearInterval(intervalId);
+
       function updateCountdown() {
         const now = new Date();
         const timeDifference = endDate.getTime() - now.getTime();
@@ -69,7 +73,7 @@
       }
 
       updateCountdown();
-      const intervalId = setInterval(updateCountdown, 1000);
+      intervalId = setInterval(updateCountdown, 1000);
     }
 
     // Calendar
@@ -92,8 +96,10 @@
     }
 
     digitalClock();
-    const countdownEndDate = new Date('2024-12-31T23:59:59');
-    countdownTimer(countdownEndDate);
+    document.getElementById('countdown-input').addEventListener('input', (event) => {
+      const endDate = new Date(event.target.value);
+      countdownTimer(endDate);
+    });
     displayCalendar();
   </script>
 </body>
