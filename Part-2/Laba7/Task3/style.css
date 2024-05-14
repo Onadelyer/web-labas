@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .tree {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+  }
+  
+  .tree ul {
+    list-style: none;
+    padding-left: 20px;
+  }
+  
+  .tree .node {
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 4px;
+  }
+  
+  .tree .node:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .tree ul ul {
+    display: none;
+  }
+  
+  .tree ul ul.active {
+    display: block;
+  }
+  
